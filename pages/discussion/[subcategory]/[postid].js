@@ -5,7 +5,7 @@ import { Fragment } from 'react';
 function DetailPage(){
     const router=useRouter();
 
-    console.log(router.query.postid);
+    console.log(router.query.id);
     return <Fragment>
         <h1> direct by post index</h1>
         <Link href='/'>back to Home</Link>
