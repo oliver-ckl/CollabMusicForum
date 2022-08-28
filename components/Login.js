@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import navStyles from '../styles/Login.module.css'
+import style from '../styles/Login.module.css'
 
 function LoginPage () {
 	let [loginParam, setLoginParam] = useState({});
 
 	return (
 		<>
-			<div className={navStyles.main}>
+			<div className={style.main}>
 				<h2>Login</h2>
 				<div>Email/Username</div>
 				<form>

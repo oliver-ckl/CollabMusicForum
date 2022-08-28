@@ -11,6 +11,9 @@ function Nav ()  {
         <li>
           <Link href='/discussion/all'>Forum</Link>
         </li>
+        <li>
+          <Link href='/login/'>Login</Link>
+        </li>
       </ul>
     </nav>
   )
