@@ -1,0 +1,15 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    padding: 0px 40px 40px 40px;
+  }
+  
+  .main div {
+  	padding: 10px 0px;
+  }
+  
+  .main button {
+    margin-top: 20px;
+    cursor: pointer;
+  }
