@@ -12,8 +12,8 @@ export default IndexPage;
 
 export async function getServerSideProps(context) {
     const {params} = context
-    const {subcategory} = params
-    
+    var {subcategory} = params
+    subcategory = subcategory[0].toUpperCase() + subcategory.substring(1)
     console.log("\n",subcategory)
     console.log("\n",{subcategory})
     let res; 
