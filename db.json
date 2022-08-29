@@ -1,4 +1,12 @@
 {
+  "dashboard":[
+    {
+      "id":0,
+      "posts":5,
+      "followers":10,
+      "following":15
+    }  
+  ],
 	"post": [
 		{
 			"id": 0,
