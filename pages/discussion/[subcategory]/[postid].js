@@ -1,27 +1,31 @@
+import {useRouter} from 'next/router'; 
 import Link from 'next/link' ;
-import { Fragment } from 'react';
-
-import PostList from '../../../components/postList'
-
-function DetailPage(props){
-    console.log(props);
-    return (
-        <Fragment>
-            <h1>Direct by post index</h1>
-            <Link href='/'>Back to Home</Link>
-            <PostList postList={props?.article}/>
-        </Fragment>
-    ); 
+import PostItem from '../../../components/postItem'
+function DetailPage({article}){
+    const router=useRouter();
+    if (router.isFallback){
+        return <h1>Loading...</h1>
+    }
+    console.log(router.query.postid); 
+    console.log(article.postid); 
+    return <>
+        <PostItem post={article}/>
+        <h1> direct by post index</h1>
+        <Link href='/'>back to Home</Link>
+    </>
 }
 
 export default DetailPage;
 
-export const getServerSideProps = async (props) =>{
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${props.query?.postid}`)
+
+export const getServerSideProps = async (context) =>{
+    const res = await fetch(`http://localhost:4000/post/${context.query?.postid}`)
     const article = await res.json();
+    console.log(article)
     return {
         props: {
-            article: [article]
+            article
         }
     }
-}
+} 
+
