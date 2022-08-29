@@ -13,10 +13,10 @@ function DetailPage({article}){
         <h1> direct by post index</h1>
         <Link href='/'>back to Home</Link>
     </>
-    
 }
 
 export default DetailPage;
+
 
 export const getServerSideProps = async (context) =>{
     const res = await fetch(`http://localhost:4000/post/${context.query?.postid}`)
@@ -28,3 +28,4 @@ export const getServerSideProps = async (context) =>{
         }
     }
 } 
+
