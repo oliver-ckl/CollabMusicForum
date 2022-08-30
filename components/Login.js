@@ -1,41 +1,27 @@
 import { useState } from 'react';
+import { Button, Box, Center, Heading, Text, Input, Container, FormControl, FormLabel } from '@chakra-ui/react'
 import style from '../styles/Login.module.css';
 
 function LoginPage() {
     let [loginParam, setLoginParam] = useState({});
-
+    
     return (
-        <>
-            <div className={style.main}>
-                <h2>Login</h2>
-                <div>Email/Username</div>
-                <form>
-                    <input
-                        type="email"
-                        onChange={(e) =>
-                            setLoginParam({
-                                ...loginParam,
-                                email: e.target.value,
-                            })
-                        }
-                    ></input>
-                </form>
-                <div>Password</div>
-                <form>
-                    <input
-                        type="password"
-                        onChange={(e) =>
-                            setLoginParam({
-                                ...loginParam,
-                                password: e.target.value,
-                            })
-                        }
-                    ></input>
-                </form>
-                <button onClick={() => console.log(loginParam)}>Login</button>
-            </div>
-            <>Login Data : {JSON.stringify(loginParam)}</>
-        </>
+        <Container maxW='2xl' bg='blackAlpha.500' border='1px white solid' borderRadius='3%'>
+            <Box padding='10' maxW='md'>
+                <Heading _hover={{ letterSpacing: 2 }} transition='0.5s'>Login</Heading>
+                <FormControl>
+                    <FormLabel>Email/Username:</FormLabel>
+                    <Input type='email' bg='blackAlpha.300' placeholder='Enter your email here'/>
+                </FormControl>
+                <FormControl>
+                    <FormLabel>Password:</FormLabel>
+                    <Input type='password' bg='blackAlpha.300' placeholder='Enter your password here'/>
+                </FormControl>
+                <Center pt='6'>
+                    <Button bg='purple.600' _hover={{ bg: 'purple.700' }}>Login</Button>
+                </Center>
+            </Box>
+        </Container>
     );
 }
 
