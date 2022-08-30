@@ -1,11 +1,9 @@
-import LoginPage from '../../components/Login';
+import LoginPage from '../../components/Login'
 
 function IndexPage(props) {
-    return (
-        <LoginPage/>
-    )
+    return <LoginPage />
 }
-export default IndexPage;
+export default IndexPage
 
 /*
 export const getServerSideProps = async () =>{
@@ -19,5 +17,3 @@ export const getServerSideProps = async () =>{
 } 
 */
 //get ServerSideProps will sent a request to server, run time is longer
-
-
