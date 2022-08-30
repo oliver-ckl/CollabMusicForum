@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import PostItem from './postItem'
-
-function PostList({ postList }) {//postList is a component parameter, obtain by page pass in
+import Link from 'next/link';
+import PostItem from './postItem';
+function PostList({ postList, subcategory }) {
+    //postList is a component parameter, obtain by page pass in
 
     return (
         <>
@@ -21,6 +21,6 @@ function PostList({ postList }) {//postList is a component parameter, obtain by 
                 </>
             ))}
         </>
-    )
+    );
 }
-export default PostList
+export default PostList;

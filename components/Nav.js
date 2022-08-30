@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import navStyles from '../styles/Nav.module.css'
+import Link from 'next/link';
+import navStyles from '../styles/Nav.module.css';
 
 function Nav() {
     return (
@@ -16,7 +16,7 @@ function Nav() {
                 </li>
             </ul>
         </nav>
-    )
+    );
 }
 
-export default Nav
+export default Nav;

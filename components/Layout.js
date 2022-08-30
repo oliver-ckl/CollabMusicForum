@@ -1,5 +1,5 @@
-import Nav from './Nav'
-import style from '../styles/Layout.module.css'
+import Nav from './Nav';
+import style from '../styles/Layout.module.css';
 
 function Layout({ children }) {
     return (
@@ -9,7 +9,7 @@ function Layout({ children }) {
                 <main className={style.main}>{children}</main>
             </div>
         </>
-    )
+    );
 }
 
-export default Layout
+export default Layout;

@@ -1,9 +1,10 @@
+
 import PostList from '../../../components/postList'
 
 import { useRouter } from 'next/router';
 import Router from 'next/router';
-function IndexPage({ articles }) {//get from props
-
+function IndexPage({ articles }) {
+    //get from props
     return (
         <>
             <button onClick={() => Router.push('/discussion/all')}>clear filter</button>
@@ -12,9 +13,9 @@ function IndexPage({ articles }) {//get from props
             <h2>post list</h2>
             <PostList postList={articles}></PostList>
         </>
-    )
+    );
 }
-export default IndexPage
+export default IndexPage;
 
 export async function getServerSideProps(context) {
     const { params } = context
@@ -31,12 +32,12 @@ export async function getServerSideProps(context) {
 
         res = await fetch(`http://localhost:4000/post?category=${subcategory}`)
     }
-    const articles = await res.json()
+    const articles = await res.json();
     return {
         props: {
             articles,
             subcategory,
         },
-    }
+    };
 }
 //get ServerSideProps will sent a request to server, run time is longer
