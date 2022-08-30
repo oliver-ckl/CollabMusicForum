@@ -1,4 +1,4 @@
-import style from '../styles/Home.module.css'
+import style from '../styles/Home.module.css';
 function PostItem({ post }) {
     return (
         <div>
@@ -7,6 +7,6 @@ function PostItem({ post }) {
             </h2>
             <p>{post.description}</p>
         </div>
-    )
+    );
 }
-export default PostItem
+export default PostItem;

@@ -1,5 +1,5 @@
-import '../styles/globals.css'
-import CommonLayout from '../components/Layout'
+import '../styles/globals.css';
+import CommonLayout from '../components/Layout';
 function MyApp({ Component, pageProps }) {
     return (
         <>
@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
                 <Component {...pageProps} />
             </CommonLayout>
         </>
-    )
+    );
 }
 
-export default MyApp
+export default MyApp;

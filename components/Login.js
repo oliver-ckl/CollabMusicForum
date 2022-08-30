@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import style from '../styles/Login.module.css'
+import { useState } from 'react';
+import style from '../styles/Login.module.css';
 
 function LoginPage() {
-    let [loginParam, setLoginParam] = useState({})
+    let [loginParam, setLoginParam] = useState({});
 
     return (
         <>
@@ -36,7 +36,7 @@ function LoginPage() {
             </div>
             <>Login Data : {JSON.stringify(loginParam)}</>
         </>
-    )
+    );
 }
 
-export default LoginPage
+export default LoginPage;
