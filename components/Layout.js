@@ -1,15 +1,22 @@
-import Nav from './Nav';
-import style from '../styles/Layout.module.css';
+import Head from 'next/head';
+import { Box } from '@chakra-ui/react';
 
-function Layout({ children }) {
-    return (
-        <>
-            <Nav />
-            <div className={style.container}>
-                <main className={style.main}>{children}</main>
-            </div>
-        </>
-    );
+
+import Navbar from './Navbar';
+
+export default function Layout({ children }) {
+  return (
+    <>
+      <Head>
+        <title>Real Estate</title>
+      </Head>
+      <Box maxWidth='1280px' m='auto'>
+        <header>
+          <Navbar />
+        </header>
+        <main>{children}</main>
+        
+      </Box>
+    </>
+  );
 }
-
-export default Layout;
