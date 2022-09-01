@@ -7,6 +7,17 @@ import { extendTheme } from '@chakra-ui/react'
 const config = {
   initialColorMode: 'dark',
   useSystemColorMode: true,
+  solid: {
+    bgGradient: "linear(to-r, primary.600, primary.500)",
+    color: "white",
+    _active: {},
+    _hover: {
+      transform: "scale(0.98)",
+      bgGradient: "linear(to-r, primary.500, primary.400)",
+    },
+    _focus: {},
+    _loading: { opacity: 1 }
+  },
 }
 
 // 3. extend the theme
