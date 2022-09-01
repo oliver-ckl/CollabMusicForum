@@ -2,7 +2,7 @@ import style from '../styles/Home.module.css';
 import { Container } from '@chakra-ui/react';
 function PostItem({ post }) {
     return (
-        <Container w='2xl' bg='blackAlpha.400'>
+        <Container w='2xl'>
             <h2>
                 {post.id} {post.title}
             </h2>
