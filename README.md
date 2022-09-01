@@ -48,9 +48,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 To standardize code format, prettier is used to format code, run the following command to format files in `pages/` and `components/` before pushing the latest code to the branch.
 ```bash
-npx prettier --write pages/
-```
-or
-```bash
-npx prettier --write components/
+npx prettier --write .
 ```
