@@ -1,7 +1,17 @@
 import Link from 'next/link';
 import navStyles from '../styles/Nav.module.css';
-import { Menu, MenuButton, MenuList, MenuItem, IconButton, Flex, Box, Spacer, MenuGroup } from '@chakra-ui/react';
-import { useColorMode } from "@chakra-ui/react";
+import {
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    IconButton,
+    Flex,
+    Box,
+    Spacer,
+    MenuGroup,
+} from '@chakra-ui/react';
+import { useColorMode } from '@chakra-ui/react';
 import { Button } from '@chakra-ui/react';
 
 function Nav() {
@@ -18,9 +28,12 @@ function Nav() {
                 <li>
                     <Link href="/login/">Login</Link>
                 </li>
+                <li>
+                    <Link href="/venue/">Venue</Link>
+                </li>
                 <Button onClick={toggleColorMode}>
-          Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-        </Button>
+                    Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+                </Button>
             </ul>
         </nav>
     );

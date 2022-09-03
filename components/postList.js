@@ -8,9 +8,7 @@ function PostList({ postList, subcategory }) {
             {postList.map((post) => (
                 <>
                     <div key={post.id}>
-
-                        <Link href={`/discussion/all/${post.id}`} >
-
+                        <Link href={`/discussion/all/${post.id}`}>
                             <a>
                                 <h3>{post.title} &rarr;</h3>
                             </a>
