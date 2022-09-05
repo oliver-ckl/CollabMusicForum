@@ -1,10 +1,10 @@
-import Nav from './Nav';
 import style from '../styles/Layout.module.css';
+import NavBar from './NavBar';
 
 function Layout({ children }) {
     return (
         <>
-            <Nav />
+            <NavBar />
             <div className={style.container}>
                 <main className={style.main}>{children}</main>
             </div>
