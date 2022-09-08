@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import Router from 'next/router';
-import CategoryList from '../../components/CategoryList'
+import CategoryList from '@components/CategoryList'
 
 function IndexPage({ categoryList }) {
     //get from props

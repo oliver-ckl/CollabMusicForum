@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Router from 'next/router';
 import { Box, Heading, Flex, Button, FormControl, Select } from '@chakra-ui/react';
 
-import PostList from '../../../components/PostList'
+import PostList from '@components/PostList'
 
 function IndexPage({ articles, categoryList }) {
     let router = useRouter();

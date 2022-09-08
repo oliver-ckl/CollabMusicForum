@@ -3,7 +3,7 @@ import { Flex, Heading, Button, Box } from '@chakra-ui/react';
 import { ChatIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 
-import PostCommentList from '../../../../components/PostCommentList';
+import PostCommentList from '@components/PostCommentList';
 
 function DetailPage({ article, comment }) {
     const router = useRouter();
