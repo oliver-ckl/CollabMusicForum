@@ -17,7 +17,7 @@ export async function getServerSideProps(context) {
     let categoryList = [];
     let res = await fetch('http://localhost:4000/forum');
     categoryList = await res.json();
-    console.log(categoryList)
+
     return {
         props: {
             categoryList

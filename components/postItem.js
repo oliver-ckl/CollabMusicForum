@@ -6,7 +6,7 @@ function PostItem({ post }) {
     let router = useRouter();
 
     return (
-        <Box w='xl' h='140px' m='10px' _hover={{ bg: 'blackAlpha.300', cursor: 'pointer' }} onClick={() => router.push(`/discussion/musicShare/${post.id}`)}>
+        <Box w='xl' h='140px' _hover={{ bg: 'blackAlpha.300', cursor: 'pointer' }} onClick={() => router.push(`/discussion/musicShare/${post.id}`)}>
             <HStack h='60px' ml='20px' gap='1'>   
                 <Heading size='md'>
                     {post.id} - {post.title}
