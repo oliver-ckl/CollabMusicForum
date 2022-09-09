@@ -29,7 +29,7 @@ const NavBar = () => {
   const textButtonRoute = {
     "Login": "/login",
     "Register": "/login",
-    "Forum": "/discussion/all"
+    "Forum": "/discussion/"
   }
 
   const textButton = ["Login", "Register", "Forum"]

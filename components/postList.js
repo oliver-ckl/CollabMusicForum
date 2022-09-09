@@ -1,26 +1,20 @@
 import Link from 'next/link';
-import PostItem from './postItem';
+import { Box, Button, Divider } from '@chakra-ui/react';
+
+import PostItem from './PostItem';
 function PostList({ postList, subcategory }) {
-    //postList is a component parameter, obtain by page pass in
-
+    // PostList is a component parameter, obtain by page pass in\
     return (
-        <>
-            {postList.map((post) => (
-                <>
-                    <div key={post.id}>
-
-                        <Link href={`/discussion/all/${post.id}`} >
-
-                            <a>
-                                <h3>{post.title} &rarr;</h3>
-                            </a>
-                        </Link>
+        <Box>
+            {
+                postList.map((post) => (
+                    <Box>
                         <PostItem post={post} />
-                        <hr></hr>
-                    </div>
-                </>
-            ))}
-        </>
+                        <Divider/>
+                    </Box>
+                ))
+            }
+        </Box>
     );
 }
 export default PostList;

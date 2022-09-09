@@ -7,6 +7,34 @@
 	      	"following":15
 	    }  
   	],
+  	"forum": [
+	    {
+	      	"title": "Music Share Forum",
+	      	"des": "You can share & discuss your favourite music right here!",
+	      	"href": "/discussion/musicShare",
+	      	"imgUrl": "https://cdn0.iconfinder.com/data/icons/internet-2020/1080/Applemusicandroid-512.png"
+	    },
+	    {
+	      	"title": "Band Forming Forum",
+	      	"des": "Find your bandmates here!",
+	      	"href": "/discussion/bandForming",
+	      	"imgUrl": "https://cdn0.iconfinder.com/data/icons/internet-2020/1080/Applemusicandroid-512.png"
+	    },
+	    {
+	      	"title": "Second Hand Instrument Forum",
+	      	"des": "Sell your second hand instrument here!",
+	      	"href": "/discussion/secondHandInstrument",
+	      	"imgUrl": "https://cdn0.iconfinder.com/data/icons/internet-2020/1080/Applemusicandroid-512.png"
+	    }
+  	],
+  	"category": [
+	    "Rock",
+	    "Metal",
+	    "Pop",
+	    "Folk",
+	    "Hiphop",
+	    "Others"
+  	],
 	"post": [
 		{
 			"id": 0,
