@@ -9,7 +9,7 @@ function PostList({ postList, subcategory }) {
             {
                 postList.map((post) => (
                     <Box>
-                        <PostItem post={post} />
+                        <PostItem post={post} key={post.id}/>
                         <Divider/>
                     </Box>
                 ))

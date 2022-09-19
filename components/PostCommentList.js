@@ -13,6 +13,7 @@ function PostCommentList ({ data }) {
 						userid={obj.userid}
 						username={obj.username}
 						content={obj.content}
+						key={obj.id}
 					/>
 				))
 			}
