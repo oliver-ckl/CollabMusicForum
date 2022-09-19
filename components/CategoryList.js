@@ -13,6 +13,7 @@ function CategoryList({ categoryList }) {
                     des={item.des}
                     href={item.href}
                     imgUrl={item.imgUrl}
+                    key={item.id}
                 />
             ))
         }

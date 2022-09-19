@@ -22,7 +22,7 @@ function IndexPage({ articles, categoryList }) {
                     <Select placeholder='All' value={category} onChange={(e) => toggleFilter(e.target.value)}>
                         {
                             categoryList.map((item) => (
-                                <option value={item}>{item}</option>
+                                <option value={item} key={item.id}>{item}</option>
                             ))
                         }
                     </Select>

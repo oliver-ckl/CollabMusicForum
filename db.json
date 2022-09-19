@@ -9,18 +9,21 @@
   	],
   	"forum": [
 	    {
+			"id": 1,
 	      	"title": "Music Share Forum",
 	      	"des": "You can share & discuss your favourite music right here!",
 	      	"href": "/discussion/musicShare",
 	      	"imgUrl": "https://cdn0.iconfinder.com/data/icons/internet-2020/1080/Applemusicandroid-512.png"
 	    },
 	    {
+			"id": 2,
 	      	"title": "Band Forming Forum",
 	      	"des": "Find your bandmates here!",
 	      	"href": "/discussion/bandForming",
 	      	"imgUrl": "https://cdn0.iconfinder.com/data/icons/internet-2020/1080/Applemusicandroid-512.png"
 	    },
 	    {
+			"id": 3,
 	      	"title": "Second Hand Instrument Forum",
 	      	"des": "Sell your second hand instrument here!",
 	      	"href": "/discussion/secondHandInstrument",

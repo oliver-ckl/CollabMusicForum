@@ -6,7 +6,7 @@ import CommonLayout from '@components/Layout';
 function MyApp({ Component, pageProps }) {
     return (
         <ChakraProvider resetCSS={true}>
-            <ColorModeScript initialColorMode={theme.config.initialColorMode}/>
+            <ColorModeScript initialColorMode={"theme.config.initialColorMode"}/>
             <CommonLayout>
                 <Component {...pageProps} />
             </CommonLayout>
