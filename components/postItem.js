@@ -1,16 +1,20 @@
 import style from '../styles/Home.module.css';
-import { Container, HStack, Tag } from '@chakra-ui/react';
+import { Box, HStack, Badge, Container, Heading } from '@chakra-ui/react';
+import { useRouter } from 'next/router'
+
 function PostItem({ post }) {
+    let router = useRouter();
+
     return (
-        <Container w='2xl'>
-            <HStack h='60px'>   
-                <h2>
-                    {post.id} {post.title}
-                </h2>
-                <Tag>{post.category}</Tag>
+        <Box w='xl' h='140px' _hover={{ bg: 'blackAlpha.300', cursor: 'pointer' }} onClick={() => router.push(`/discussion/musicShare/${post.id}`)}>
+            <HStack h='60px' ml='20px' gap='1'>   
+                <Heading size='md'>
+                    {post.id} - {post.title}
+                </Heading>
+                <Badge variant='solid' colorScheme='green'>{post.category}</Badge>
             </HStack>
-            <p>{post.description}</p>
-        </Container>
+            <Container color='gray' noOfLines={[1,2]}>{post.description}</Container>
+        </Box>
     );
 }
 export default PostItem;
