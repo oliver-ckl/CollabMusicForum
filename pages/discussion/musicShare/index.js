@@ -41,7 +41,7 @@ export async function getServerSideProps(context) {
     let postRes = [];
     let categoryRes = [];
     let param = '';
-
+    
     for (let key in query) {
         param += `${key}=${query[key]}`;
     }
@@ -50,7 +50,7 @@ export async function getServerSideProps(context) {
     postRes = await fetch(`http://localhost:4000/post${param ? '?' : ''}${param}`)
     const articles = await postRes.json();
     const categoryList = await categoryRes.json();
-
+    console.log("param are: ",param);
     return {
         props: {
             articles,

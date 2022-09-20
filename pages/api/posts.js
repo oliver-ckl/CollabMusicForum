@@ -32,10 +32,7 @@ async function getPosts(req,res){
             .sort({ _id: -1 })
             .toArray();
         // return the posts
-        return res.json({
-            message: JSON.parse(JSON.stringify(posts)),
-            success: true,
-        });
+        return res.json(JSON.parse(JSON.stringify(posts)));
     } catch (error) {
         // return the error
         return res.json({

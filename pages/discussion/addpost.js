@@ -1,17 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box,Text,Button,Textarea,Input, Divider,FormControl,FormLabel,
     FormErrorMessage,
     FormHelperText, } from '@chakra-ui/react';
 import {
-    AsyncSelect,
     Select,
   } from "chakra-react-select";
-
+import Router from 'next/router'
 export default function AddPost() {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
+    const[isValid,setIsValid] = useState(false);
+    const [category, setCategory] = useState('');
+    const [subcategory, setSubcategory] = useState([]);
+    useEffect(()=>{
+        if (category!=''){
+            console.log("category is: "+category);
+            setIsValid(true);
+        }
+        console.log(subcategory);
+    })
     const options = [
         { label: "Music Share", value: "music share" },
         { label: "Band Forming", value: "band forming" },
@@ -25,26 +34,24 @@ export default function AddPost() {
         { label: "Hiphop", value: "hiphop"},
         { label: "Others", value: "others"},
       ];
-    const [category, setCategory] = useState([])
-    const [subcategory, setSubcategory] = useState([])
+    const formSubmit = (e) =>{
+        handlePost(e);
+        Router.push("/discussion/test");
+    }
     const handlePost = async (e) => {
         e.preventDefault();
 
         // reset error and message
         setError('');
         setMessage('');
-
-        // fields check
-        if (!title || !content) return setError('All fields are required');
-
+        
         let post = {
             title,
             content,
-            published: false,
             createdAt: new Date().toISOString(),
             user:{//wait for login system fully implement to make it dynamic
                 userId:1,
-                userName:"lok",
+                userName:"tester1",
                 },
             category,
             subcategory
@@ -68,12 +75,13 @@ export default function AddPost() {
             // set the error
             return setError(data.message);
         }
+        
     };
 
     return (
-        <div>
+        <>
             <Box>
-                <form onSubmit={handlePost} className={"form"}>
+                <form onSubmit={formSubmit} className={"form"}>
                     {error ? (
                         <Box className={"formItem"}>
                             <h3 className={"error"}>{error}</h3>
@@ -92,6 +100,7 @@ export default function AddPost() {
                             onChange={(e) => setTitle(e.target.value)}
                             value={title}
                             placeholder="title"
+                            required="true"
                         />
                         <Divider/>
                     </FormControl>
@@ -103,37 +112,47 @@ export default function AddPost() {
                             onChange={(e) => setContent(e.target.value)}
                             value={content}
                             placeholder="Post content"
+                            required="true"
                         />
-                        
+                    
                     </FormControl>
+                    
                     <FormControl>
                     <FormLabel>Post Category</FormLabel>
                     <Select
                         name='category'
+                        onChange={(e)=>setCategory(e.value)}
                         options={options}
-                        value={category}
-                        onChange={setCategory}
+                        value={options.value} 
                         labelledBy="Select"
+                        required="true"
                     />
+                    {!isValid &&<FormHelperText>You must choose a category!</FormHelperText>}
                     <FormLabel>Post SubCategory</FormLabel></FormControl>
                     {/* TODO: subcat should change its content according to selected content */}
-
 
                     <FormControl>
                     <Select
                         name='subcategory'
                         options={suboptions}
-                        value={subcategory}
-                        onChange={setSubcategory}
+                        values={suboptions.values}
+                        onChange={(e)=>{console.log(e);
+                            //setSubcategory(e);
+                            let arr=[];
+                            for (let i=0;i<e.length;i++){
+                                arr.push(e[i].value);
+                            }
+                            setSubcategory(arr);
+                        ;}}
                         isMulti={true}
                         closeMenuOnSelect={false}
                     />
                     </FormControl>
                     <Box className={"formItem"}>
-                        <Button type="submit">Add post</Button>
+                        <Button type="submit" disabled={!isValid}>Add post</Button>
                     </Box>
                 </form>
             </Box>
-        </div>
+        </>
     );
 }

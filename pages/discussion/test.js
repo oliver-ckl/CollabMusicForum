@@ -1,3 +1,4 @@
+import { Box,Button } from '@chakra-ui/react';
 import Head from 'next/head';
 
 
@@ -5,15 +6,19 @@ import PostCard from '../../components/PostCard';
 //will delete
 
 export default function test({ posts }) {
+    const applyFilter = async(e)=>{//not working now
+        let response = await fetch('/api/posts', {
+            method: 'GET',
+            filter:"music share"
+        });
+    }
     return (
         <div>
-            <Head>
-                <title>Home</title>
-            </Head>
-
-
-
+           
             <main>
+                <Box>
+                    <Button onClick={applyFilter} value={"music share"}>apply filter</Button>
+                </Box>
                 <div >
                     {posts.length === 0 ? (
                         <h2>No added posts</h2>
@@ -42,7 +47,7 @@ export async function getServerSideProps(ctx) {
     console.log(data);
     return {
         props: {
-            posts: data['message'],
+            posts: data,
         },
     };
 }
