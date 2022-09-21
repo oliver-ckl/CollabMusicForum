@@ -22,20 +22,25 @@ export default async function handler(req, res) {
     }
 }
 async function getPosts(req,res){
+    var query={};
+    if (req.query.category){
+        query.category=req.query.category;
+    }
+    if (req.query.subcategory){
+        query.subcategory=req.query.subcategory;
+    }
     try {
+        console.log("query is: ",query);
         // connect to the database
         let { db } = await connectToDatabase();
         // fetch the posts
         let posts = await db
             .collection('posts')
-            .find({})
+            .find(query)
             .sort({ _id: -1 })
             .toArray();
         // return the posts
-        return res.json({
-            message: JSON.parse(JSON.stringify(posts)),
-            success: true,
-        });
+        return res.json(JSON.parse(JSON.stringify(posts)));
     } catch (error) {
         // return the error
         return res.json({
