@@ -100,7 +100,7 @@ export default function AddPost() {
                             onChange={(e) => setTitle(e.target.value)}
                             value={title}
                             placeholder="title"
-                            required="true"
+                            required={true}
                         />
                         <Divider/>
                     </FormControl>
@@ -112,7 +112,7 @@ export default function AddPost() {
                             onChange={(e) => setContent(e.target.value)}
                             value={content}
                             placeholder="Post content"
-                            required="true"
+                            required={true}
                         />
                     
                     </FormControl>
