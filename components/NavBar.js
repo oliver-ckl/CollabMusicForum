@@ -32,10 +32,11 @@ const NavBar = () => {
   const textButtonRoute = {
     "Login": "/login",
     "Register": "/login",
-    "Forum": "/discussion/"
+    "Forum": "/forum",
+    "Discussion": "/discussion/"
   }
 
-  const textButton = ["Login", "Register", "Forum"]
+  const textButton = ["Login", "Register", "Forum", "Discussion"]
   
   const DrawerButton = () => (
     <IconButton 

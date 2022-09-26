@@ -6,7 +6,7 @@ function LoginPage() {
     let [loginParam, setLoginParam] = useState({});
     
     return (
-        <Container maxW='2xl' bg='blackAlpha.500' border='1px white solid' borderRadius='3%'>
+        <Container maxW='2xl' bg='blackAlpha.500' border='1px white solid' borderRadius='3%' margin={'5rem 0'} >
             <Box padding='10' maxW='md'>
                 <Heading _hover={{ letterSpacing: 2 }} transition='0.5s'>Login</Heading>
                 <FormControl>
