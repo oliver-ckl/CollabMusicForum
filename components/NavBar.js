@@ -46,15 +46,17 @@ const NavBar = () => {
       float={'left'} 
       size={'lg'} 
       colorScheme={"unstyled"} 
+      // display={{ base: 'inline', lg: 'hidden' }}
     />
   )
 
   return (
     <NavWrapper>
-      <DrawerButton />
+      <DrawerButton/>
       <NavBarDrawer isOpen={isOpen} onClose={onClose} />
       <Navbar>
         {textButton.map((text)=>(
+          // Adding display={{base: 'hidden', lg: 'inline'}} can hide nav items when window width reduced to sm
           <NavbarBox key={text} as={'button'}  onClick={()=>{router.push(textButtonRoute[text])}}>
             <Text 
               fontSize={'20px'}>
