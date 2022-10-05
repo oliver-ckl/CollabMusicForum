@@ -6,14 +6,14 @@ function PostItem({ post }) {
     let router = useRouter();
 
     return (
-        <Box w='xl' h='140px' _hover={{ bg: 'blackAlpha.300', cursor: 'pointer' }} onClick={() => router.push(`/discussion/musicShare/${post.id}`)}>
-            <HStack h='60px' ml='20px' gap='1'>   
+        <Box w='100%' padding={5} _hover={{ bg: 'blackAlpha.300', cursor: 'pointer' }} onClick={() => router.push(`/discussion/musicShare/${post.id}`)}>
+            <HStack gap={1}>
+                <Badge variant='solid' colorScheme='green' ml={4}>{post.category}</Badge>
                 <Heading size='md'>
                     {post.id} - {post.title}
                 </Heading>
-                <Badge variant='solid' colorScheme='green'>{post.category}</Badge>
             </HStack>
-            <Container color='gray' noOfLines={[1,2]}>{post.description}</Container>
+            <Container color='gray' noOfLines={[1,2]} mt={3}>{post.description}</Container>
         </Box>
     );
 }

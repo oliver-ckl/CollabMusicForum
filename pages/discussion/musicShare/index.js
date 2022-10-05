@@ -15,9 +15,9 @@ function IndexPage({ articles, categoryList }) {
     }
 
     return (
-        <Box w='xl'>
+        <Flex flexDirection='column' alignItems='center'>
             <Heading> Forum main page </Heading>
-            <Flex mt={10} mb={10}>
+            <Flex mt={5} mb={5}>
                 <FormControl mr={5} >
                     <Select placeholder='All' value={category} onChange={(e) => toggleFilter(e.target.value)}>
                         {
@@ -29,7 +29,7 @@ function IndexPage({ articles, categoryList }) {
                 </FormControl>
             </Flex>
             <PostList postList={articles}></PostList>
-        </Box>
+        </Flex>
     );
 }
 export default IndexPage;

@@ -12,8 +12,8 @@ function DetailPage({ article, comment }) {
     }
     
     return (
-        <>
-            <Box w='xl' p='20px'>
+        <Flex flexDirection='column' alignItems='center'>
+            <Box >
                 <Heading size='xl'><ChatIcon/> #{article.id} - {article.title}</Heading>
                 <Flex gap='12' mt='24px'>
                     <Button variant='link'><Link href="/">Back to Home</Link></Button>
@@ -21,7 +21,7 @@ function DetailPage({ article, comment }) {
                 </Flex>
             </Box>
             <PostCommentList data={comment}/>
-        </>
+        </Flex>
     );
 }
 

@@ -5,7 +5,7 @@ import CategoryItem from './CategoryItem';
 
 function CategoryList({ categoryList }) {
     return (
-        <Grid templateColumns='repeat(3, 1fr)' gap={50} p='50px' maxW='1450px'>
+        <Grid templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }} gap={50} p='50px' maxW='1450px'>
         {
             categoryList.map((item) => (
                 <CategoryItem

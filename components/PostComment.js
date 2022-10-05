@@ -2,16 +2,16 @@ import { Box, Container, Text, Flex, HStack, Avatar, Tag } from '@chakra-ui/reac
 
 function PostComment ({ index, userid, username, content }) {
 	return (
-		<Flex flexWrap="wrap" bg='blackAlpha.400' w="2xl" m='30px' p='10px'>
-			<Flex ml="4" justifyContent="center" alignItems="center" gap="2">
+		<Box bg='blackAlpha.300' w="100%" mt={8} pl={{base: 3}} pr={{base: 3}}>
+			<HStack ml="4" p='2'>
 				<Text><b>{index}.</b></Text>
-				<Text color="blue.400">{username}</Text>
+				<Text color="blue.500" _hover={{ textDecoration: 'underline', cursor: 'pointer' }}>{username}</Text>
 				<Text color="gray">#{userid}</Text>
-			</Flex>
-			<Container maxW="600px">
+			</HStack>
+			<Container pb={3}>
 				{content}
 			</Container>
-		</Flex>
+		</Box>
 	);
 }
 
